@@ -1,0 +1,37 @@
+.navbar-container {
+    height: 64px;
+    padding: 0 64px;
+
+    .logo-container {
+        gap: 0.5rem;
+        cursor: pointer;
+
+        h1 {
+            font-size: 20px;
+            font-weight: 700;
+        }
+    }
+
+    .navlink-container {
+        ul li a {
+            color: var(--text-inactive-color);
+            transition: all 0.3s ease-in-out;
+        }
+
+        ul li a.active {
+            color: var(--secondary-color);
+        }
+
+        ul li a:hover {
+            color: var(--secondary-color);
+        }
+    }
+
+    .cta-container {
+        gap: 12px;
+        
+        h2 {
+            font-weight: 500;
+        }
+    }
+}

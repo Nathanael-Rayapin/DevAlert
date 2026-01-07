@@ -1,0 +1,18 @@
+@import "tailwindcss";
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  background-color: var(--tertiary-color);
+}
+
+:root {
+  --primary-color: #3c7eff;
+  --primary-dark-color: #3671e7;
+  --secondary-color: #f5f9ff;
+  --tertiary-color: #161b24;
+  --text-inactive-color: #7d8086;
+}
+
