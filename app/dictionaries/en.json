@@ -1,0 +1,21 @@
+{
+    "navbar": {
+        "feature": "Feature",
+        "pricing": "Pricing",
+        "howItWorks": "How it works"
+    },
+    "authentication": {
+        "signin": "Sign in",
+        "signup": "Get started"
+    },
+    "home": {
+        "badge": "Real-time API monitoring",
+        "title-1": "Never miss an API ",
+        "title-2": "downtime ",
+        "title-3": "again",
+        "description": "DevAlert monitors your critical APIs in real-time and sends instant alerts via SMS and push notifications when something goes wrong.",
+        "cta-1": "Start monitoring free",
+        "cta-2": "View demo",
+        "info": "Free plan includes 2 APIs • No credit card required"
+    }
+}

@@ -1,0 +1,30 @@
+.home-container {
+    margin-top: 96px;
+
+    .first-section {
+        gap: 32px;
+
+        h1.title {
+            font-weight: 700;
+            line-height: 1.1;
+        }
+
+        h1.title span {
+            color: var(--text-inactive-color);
+        }
+
+        p.description {
+            width: 60%;
+            line-height: 1.75rem;
+            color: var(--text-inactive-color);
+        }
+
+        .cta-buttons {
+            gap: 16px
+        }
+
+        .info {
+            color: var(--text-inactive-color);
+        }
+    }
+}

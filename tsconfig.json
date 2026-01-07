@@ -1,8 +1,9 @@
 {
   "compilerOptions": {
-    "baseUrl": "app/",
+    "baseUrl": "app/[lang]/",
     "paths": {
-      "@/components/*": ["components/*"]
+      "@/components/*": ["components/*"],
+      "@dictionary": ["dictionaries"]
     },
     "target": "ES2017",
     "lib": ["dom", "dom.iterable", "esnext"],

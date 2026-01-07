@@ -29,9 +29,17 @@
 
     .cta-container {
         gap: 12px;
-        
-        h2 {
+
+        h2.signin {
             font-weight: 500;
+            cursor: pointer;
+            border-radius: 0.5rem;
+            padding: 0.5rem 1rem;
+            transition: all 0.3s ease-in-out;
+
+            &:hover {
+                background-color: var(--primary-dark-color);
+            }
         }
     }
 }

@@ -10,6 +10,9 @@
     "lint:fix": "eslint --fix"
   },
   "dependencies": {
+    "@formatjs/intl-localematcher": "^0.7.5",
+    "@types/negotiator": "^0.6.4",
+    "negotiator": "^1.0.0",
     "next": "16.1.1",
     "react": "19.2.3",
     "react-dom": "19.2.3",

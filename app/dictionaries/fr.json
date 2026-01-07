@@ -1,0 +1,21 @@
+{
+    "navbar": {
+        "feature": "Fonctionnalités",
+        "pricing": "Tarifs",
+        "howItWorks": "Comment ça marche"
+    },
+    "authentication": {
+        "signin": "Se connecter",
+        "signup": "S'inscrire"
+    },
+    "home": {
+        "badge": "Surveillance API en temps réel",
+        "title-1": "Ne manquez jamais une ",
+        "title-2": "interruption ",
+        "title-3": "de service API",
+        "description": "DevAlert surveille vos API critiques en temps réel et envoie des alertes instantanées par SMS et notifications push en cas de problème.",
+        "cta-1": "Commencez à surveiller gratuitement",
+        "cta-2": "Voir une démo",
+        "info": "Le plan gratuit comprend 2 API • Aucune carte de crédit requise"
+    }
+}
