@@ -1,8 +1,7 @@
 .home-container {
-    margin-top: 96px;
-
     .first-section {
         gap: 32px;
+        margin: 72px 0;
 
         h1.title {
             font-weight: 700;
@@ -25,6 +24,83 @@
 
         .info {
             color: var(--text-inactive-color);
+        }
+    }
+
+    .banner {
+        background-color: var(--tertiary-transparent-color);
+        border: 1px solid #161b24;
+        margin-bottom: 72px;
+
+        p {
+            color: var(--text-inactive-color);
+            text-transform: uppercase;
+        }
+
+        span {
+            color: var(--text-inactive-color);
+            font-weight: 700;
+        }
+    }
+
+    .second-section {
+        padding: 0 32px;
+        margin-bottom: 72px;
+
+        .left-part {
+            width: 45%;
+            gap: 24px;
+
+            .title {
+                font-weight: 700;
+                line-height: 4rem;
+            }
+
+            .description {
+                color: var(--text-inactive-color);
+                line-height: 2rem;
+            }
+
+            ul li {
+                color: var(--text-inactive-color);
+            }
+        }
+
+        .right-part {
+            width: 45%;
+
+            .card {
+                padding: 32px;
+                background-color: #0f060a;
+                border: 1px solid #e62b342c;
+                border-radius: 12px;
+
+                p {
+                    color: var(--error-color);
+                }
+
+                .placeholder {
+                    height: 8px;
+                    background-color: var(--tertiary-light-color);
+                    border-radius: 6px;
+                }
+
+                .placeholder:nth-of-type(1) {
+                    width: 100%;
+                }
+
+                .placeholder:nth-of-type(2) {
+                    width: 80%;
+                }
+
+                .placeholder:nth-of-type(3) {
+                    width: 60%;
+                }
+
+                p.warning-message {
+                    color: var(--text-inactive-color);
+                }
+            }
         }
     }
 }

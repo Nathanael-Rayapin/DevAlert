@@ -9,13 +9,29 @@
         "signup": "Get started"
     },
     "home": {
-        "badge": "Real-time API monitoring",
-        "title-1": "Never miss an API ",
-        "title-2": "downtime ",
-        "title-3": "again",
-        "description": "DevAlert monitors your critical APIs in real-time and sends instant alerts via SMS and push notifications when something goes wrong.",
-        "cta-1": "Start monitoring free",
-        "cta-2": "View demo",
-        "info": "Free plan includes 2 APIs • No credit card required"
+        "first-section": {
+            "badge": "Real-time API monitoring",
+            "title-1": "Never miss an API ",
+            "title-2": "downtime ",
+            "title-3": "again",
+            "description": "DevAlert monitors your critical APIs in real-time and sends instant alerts via SMS and push notifications when something goes wrong.",
+            "cta-1": "Start monitoring free",
+            "cta-2": "View demo",
+            "info": "Free plan includes 2 APIs • No credit card required"
+        },
+        "banner": {
+            "description": "Monitor the APIs you rely on"
+        },
+        "second-section": {
+            "badge": "The Problem",
+            "title": "API downtime costs you customers",
+            "description": "When critical APIs go down, your application breaks. Most developers find out from angry users or when it's already too late.",
+            "list-1": "Lost revenue during outages",
+            "list-2": "Damaged user trust and reputation",
+            "list-3": "Hours wasted on manual monitoring",
+            "list-4": "Late detection of critical issues",
+            "api-status": "API Status: Down",
+            "warning-message": "⚠️ Your payment provider has been down for 23 minutes and you didn't know..."
+        }
     }
 }

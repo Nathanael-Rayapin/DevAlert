@@ -13,7 +13,9 @@ html, body {
   --primary-dark-color: #3671e7;
   --secondary-color: #f5f9ff;
   --tertiary-color: #030407;
+  --tertiary-transparent-color: #05070a;
   --tertiary-light-color: #11161f;
   --text-inactive-color: #7d8086;
+  --error-color: #e62b34;
 }
 

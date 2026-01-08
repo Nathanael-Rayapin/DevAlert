@@ -3,6 +3,7 @@
     padding: 0 64px;
 
     .logo-container {
+        width: 242px;
         gap: 0.5rem;
         cursor: pointer;
 

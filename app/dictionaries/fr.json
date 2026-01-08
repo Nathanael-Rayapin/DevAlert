@@ -9,13 +9,29 @@
         "signup": "S'inscrire"
     },
     "home": {
-        "badge": "Surveillance API en temps réel",
-        "title-1": "Ne manquez jamais une ",
-        "title-2": "interruption ",
-        "title-3": "de service API",
-        "description": "DevAlert surveille vos API critiques en temps réel et envoie des alertes instantanées par SMS et notifications push en cas de problème.",
-        "cta-1": "Commencez à surveiller gratuitement",
-        "cta-2": "Voir une démo",
-        "info": "Le plan gratuit comprend 2 API • Aucune carte de crédit requise"
+        "first-section": {
+            "badge": "Surveillance API en temps réel",
+            "title-1": "Ne manquez jamais une ",
+            "title-2": "interruption ",
+            "title-3": "de service API",
+            "description": "DevAlert surveille vos API critiques en temps réel et envoie des alertes instantanées par SMS et notifications push en cas de problème.",
+            "cta-1": "Commencez à surveiller gratuitement",
+            "cta-2": "Voir une démo",
+            "info": "Le plan gratuit comprend 2 API • Aucune carte de crédit requise"
+        },
+        "banner": {
+            "description": "Surveillez les API sur lesquelles vous comptez"
+        },
+        "second-section": {
+            "badge": "Le Problème",
+            "title": "Les temps d'arrêt de l'API vous coûtent des clients",
+            "description": "Lorsque des API critiques tombent en panne, votre application cesse de fonctionner. La plupart des développeurs l'apprennent par des utilisateurs mécontents ou lorsqu'il est déjà trop tard.",
+            "list-1": "Perte de revenus pendant les pannes",
+            "list-2": "Atteinte à la confiance des utilisateurs et à la réputation",
+            "list-3": "Heures perdues à effectuer une surveillance manuelle",
+            "list-4": "Détection tardive des problèmes critiques",
+            "api-status": "Statut de l'API : indisponible",
+            "warning-message": "⚠️ Votre prestataire de paiement est hors service depuis 23 minutes et vous ne le saviez pas..."
+        }
     }
 }

@@ -6,6 +6,7 @@ interface BadgeProps {
     hasIcon: boolean;
     icon?: React.ReactNode;
     backgroundColor: string;
+    border?: string;
 }
 
 export default function Badge(props: BadgeProps) {
@@ -14,16 +15,17 @@ export default function Badge(props: BadgeProps) {
         textContent,
         hasIcon,
         icon,
-        backgroundColor
+        backgroundColor,
+        border,
     } = props;
 
     return (
         <div
             className={`${styles.badgeContainer} flex flex-row justify-center items-center`}
-            style={{ backgroundColor: backgroundColor }}>
+            style={{ backgroundColor: backgroundColor, border: border }}>
             {hasIcon && !hasTextContent && icon}
-            {!hasIcon && hasTextContent && <span className='px-3 text-white'>{textContent}</span>}
-            {hasIcon && hasTextContent && <span className='px-8 text-white flex items-center gap-2'>{icon} {textContent}</span>}
+            {!hasIcon && hasTextContent && <span className='text-white text-xs'>{textContent}</span>}
+            {hasIcon && hasTextContent && <span className='text-white flex items-center gap-2 text-xs'>{icon} {textContent}</span>}
         </div>
     )
 }
