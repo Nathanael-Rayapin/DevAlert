@@ -1,36 +1,74 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🚨 DevAlert
 
-## Getting Started
+> Ne découvrez plus jamais une panne via des clients en colère.
 
-First, run the development server:
+Alertes instantanées lorsque des services externes (Stripe, AWS, Vercel...) tombent en panne,
+que votre certificat SSL expire ou que votre API ralentit.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🎯 Le Problème
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Vous dormez. L'API Stripe tombe à 3h du matin.  
+Votre flux de paiement est interrompu. Les clients ne peuvent pas finaliser leurs achats.  
+Vous vous réveillez à 9h avec 47 emails furieux et 12 000 € de chiffre d'affaires perdu.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+**Ça vous semble familier ?**
 
-## Learn More
+Les solutions actuelles comme Datadog coûtent plus de 500€/mois et sont complexes à configurer.  
 
-To learn more about Next.js, take a look at the following resources:
+## ✨ La Solution
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+DevAlert surveille tout ce qui peut casser votre application :
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### 🔌 Services externes (500+ supportés)
 
-## Deploy on Vercel
+- Stripe, OpenAI, AWS, Vercel, Supabase, Twilio...
+- Vérifie les pages de statut officielles toutes les X secondes
+- Vous alerte **avant** que vos clients ne remarquent le problème
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### 🔒 Certificats SSL
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Surveille les dates d'expiration
+- Alertes à 30/7/1 jour(s) avant expiration
+- Supporte les certificats wildcard
+
+### 🌐 Domaines
+
+- Surveillance WHOIS
+- Détection des changements DNS
+- Alertes d'expiration
+
+### ⚡ Vos APIs
+
+- Surveillance uptime (intervalle X secondes)
+- Suivi de latence (alerte si >X secondes)
+- Surveillance des codes de statut
+
+### 📦 Dépendances
+
+- Scan de vulnérabilités NPM
+- Alertes de sécurité automatiques
+
+
+## 🎨 Captures d'écran
+![DevAlert](public/image.png)
+
+
+## 🛠️ Stack Technique
+
+- **Frontend :** Next.js 15, React, TailwindCSS
+- **Backend :** Node.js, PostgreSQL, Redis
+- **Monitoring :** Workers distribués (15 emplacements)
+- **Alertes :** Twilio (SMS), Resend (Email), Webhooks
+
+
+## 🗺️ Roadmap
+
+- [ ] Conception Architecture
+- [ ] Surveillance des services externes
+- [ ] Alertes certificats SSL
+- [ ] Notifications Email
+- [ ] Alertes SMS (T1 2025)
+- [ ] Intégration Slack/Discord (T1 2025)
+- [ ] Application mobile (T2 2025)
+- [ ] Détection d'anomalies par IA (T2 2025)
