@@ -32,6 +32,36 @@
             "list-4": "Late detection of critical issues",
             "api-status": "API Status: Down",
             "warning-message": "⚠️ Your payment provider has been down for 23 minutes and you didn't know..."
+        },
+        "third-section": {
+            "badge": "The Solution",
+            "title": "Be the first to know",
+            "description": "DevAlert continuously monitors your critical APIs and notifies you the moment something goes wrong. Fix issues before they impact your users.",
+            "list-1": "Real-time health checks every 60 seconds",
+            "list-2": "Instant SMS and push notifications (coming soon)",
+            "list-3": "Monitor unlimited endpoints per API",
+            "list-4": "Historical uptime and incident logs",
+            "api-status": "All systems operational",
+            "info-message": "Instant alerts via SMS + Push"
+        },
+        "fourth-section": {
+            "badge": "How it works",
+            "title": "Setup in under 2 minutes",
+            "description": "Get started with DevAlert in two simple steps. No configuration files, no complex setup.",
+            "card": {
+                "1": {
+                    "title": "Sign up",
+                    "description": "Create your free account in seconds. No credit card required for the free plan."
+                },
+                "2": {
+                    "title": "Select APIs",
+                    "description": "Choose which APIs to monitor from our list or add custom endpoints."
+                },
+                "3": {
+                    "title": "Get alerted",
+                    "description": "Receive instant SMS and push notifications when issues are detected."
+                }
+            }
         }
     }
 }

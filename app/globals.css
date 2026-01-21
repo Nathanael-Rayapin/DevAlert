@@ -16,6 +16,7 @@ html, body {
   --tertiary-transparent-color: #05070a;
   --tertiary-light-color: #11161f;
   --text-inactive-color: #7d8086;
+  --card-background-color: rgba(9, 11, 15, 0.562);
   --error-color: #e62b34;
 }
 

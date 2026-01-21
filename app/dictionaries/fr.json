@@ -32,6 +32,36 @@
             "list-4": "Détection tardive des problèmes critiques",
             "api-status": "Statut de l'API : indisponible",
             "warning-message": "⚠️ Votre prestataire de paiement est hors service depuis 23 minutes et vous ne le saviez pas..."
+        },
+        "third-section": {
+            "badge": "La Solution",
+            "title": "Soyez les premiers informés",
+            "description": "DevAlert surveille en permanence vos API critiques et vous avertit dès qu'un problème survient. Corrigez les problèmes avant qu'ils n'aient un impact sur vos utilisateurs.",
+            "list-1": "Contrôles de santé en temps réel toutes les 60 secondes",
+            "list-2": "SMS instantanés et notifications push (à venir)",
+            "list-3": "Surveillez un nombre illimité de terminaux par API",
+            "list-4": "Historique des temps de disponibilité et journaux d'incidents",
+            "api-status": "Tous les systèmes sont opérationnels.",
+            "info-message": "Alertes instantanées par SMS + Push"
+        },
+        "fourth-section": {
+            "badge": "Comment ça marche",
+            "title": "Configuration en moins de 2 minutes",
+            "description": "Commencez à utiliser DevAlert en deux étapes simples. Pas de fichiers de configuration, pas d'installation complexe",
+            "card": {
+                "1": {
+                    "title": "Inscrivez-vous",
+                    "description": "Créez votre compte gratuit en quelques secondes. Aucune carte de crédit n'est requise pour le forfait gratuit."
+                },
+                "2": {
+                    "title": "Sélectionner les API",
+                    "description": "Choisissez les API à surveiller dans notre liste ou ajoutez des points de terminaison personnalisés."
+                },
+                "3": {
+                    "title": "Recevez une alerte",
+                    "description": "Recevez instantanément des SMS et des notifications push lorsque des problèmes sont détectés."
+                }
+            }
         }
     }
 }
