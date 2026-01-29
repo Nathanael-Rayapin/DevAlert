@@ -7,12 +7,10 @@ import { ImWarning } from "react-icons/im";
 import { ApiNames } from "./home-data/api-name";
 import { MdFiberManualRecord } from "react-icons/md";
 import { FaRegCircleCheck } from "react-icons/fa6";
-import { LuShield } from "react-icons/lu";
-
-
-import "./home.css";
 import { FiBell } from "react-icons/fi";
 import Card from "@/components/card/card";
+import Footer from "@/components/footer/footer";
+import "./home.css";
 
 export default async function Home({
   params,
@@ -49,15 +47,6 @@ export default async function Home({
             backgroundColor="var(--primary-color)"
             hoverBackgroundColor="var(--primary-dark-color)"
           />
-          <Button
-            buttonType="button"
-            hasTextContent={true}
-            textContent={dict.home["first-section"]["cta-2"]}
-            hasIcon={false}
-            backgroundColor="var(--tertiary-color)"
-            hoverBackgroundColor="var(--primary-dark-color)"
-            border="1px solid var(--tertiary-light-color)"
-          />
         </div>
         <p className="text-center text-sm info">{dict.home["first-section"].info}</p>
       </div>
@@ -93,9 +82,9 @@ export default async function Home({
           <div className="card flex flex-col gap-y-10">
             <p className="flex items-center gap-3"><MdFiberManualRecord size={20} /> {dict.home["second-section"]["api-status"]}</p>
             <div className="placeholders flex flex-col gap-y-4">
-              <div className="placeholder"></div>
-              <div className="placeholder"></div>
-              <div className="placeholder"></div>
+              <p className="text-white">{dict.home["second-section"]["api-message"]}</p>
+              <p className="text-white">{dict.home["second-section"]["api-message-detail"]}</p>
+              <hr/>
             </div>
             <p className="warning-message">{dict.home["second-section"]["warning-message"]}</p>
           </div>
@@ -103,7 +92,7 @@ export default async function Home({
       </div>
 
       {/* Third Section */}
-      <div className="third-section flex flex-row-reverse justify-between items-center">
+      <div className="third-section flex flex-row-reverse justify-between items-center w-full">
         <div className="left-part flex flex-col">
           <Badge
             hasTextContent={true}
@@ -154,21 +143,13 @@ export default async function Home({
           backgroundColor="var(--tertiary-color)"
           border="1px solid var(--tertiary-light-color)"
         />
-        <h1 className="text-white text-7xl text-center title">
+        <h2 className="text-white text-7xl text-center title">
           {dict.home["fourth-section"]["title"]}
-        </h1>
+        </h2>
         <p className="text-white text-center text-xl description mb-12">
           {dict.home["fourth-section"].description}
           </p>
         <ul className="w-full flex justify-evenly gap-x-4 items-stretch">
-          {/* <li>
-            <Card
-              key={"authentication"}
-              icon={<LuShield color="var(--primary-color)" size={24}/>}
-              titleContent={dict.home["fourth-section"]["card"]["1"]["title"]} 
-              descriptionContent={dict.home["fourth-section"]["card"]["1"]["description"]}
-              backgroundColor="var(--card-background-color)"/>
-          </li> */}
           <li>
             <Card
               key={"authentication"}
@@ -187,6 +168,16 @@ export default async function Home({
           </li>
         </ul>
       </div>
+
+      {/* Fifth Section */}
+      <div className="fifth-section flex items-center w-full">
+        <div className="flex flex-col justify-center items-center mx-auto">
+          <h2 className="text-5xl text-white title">{dict.home["fifth-section"].title}</h2><br/>
+          <p className="text-lg description">{dict.home["fifth-section"]["description"]}</p>
+        </div>
+      </div>
+
+      <Footer dict={dict}/>
 
     </div>
   );

@@ -13,13 +13,15 @@ export async function generateStaticParams() {
   return [{ lang: 'fr' }, { lang: 'en' }];
 }
 
+interface ILayoutProps {
+  children: React.ReactNode;
+  params: Promise<{ lang: string }>;
+}
+
 export default async function RootLayout({
   children,
   params,
-}: Readonly<{
-  children: React.ReactNode;
-  params: Promise<{ lang: string }>;
-}>) {
+}: Readonly<ILayoutProps>) {
   const { lang } = await params;
 
   // Vérifier que la langue existe, sinon 404
@@ -32,7 +34,7 @@ export default async function RootLayout({
   return (
     <html lang={lang}>
       <body className="antialiased">
-        <Navbar dict={dict}/>
+        <Navbar dict={dict} />
         {children}
       </body>
     </html>

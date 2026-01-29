@@ -12,6 +12,7 @@ interface Buttonprops {
     backgroundColor: string;
     hoverBackgroundColor?: string;
     border?: string;
+    href?: string;
 }
 
 export default function Button(props: Buttonprops) {
@@ -23,7 +24,8 @@ export default function Button(props: Buttonprops) {
         icon,
         backgroundColor,
         hoverBackgroundColor,
-        border
+        border,
+        href
     } = props;
 
     const [isHovered, setIsHovered] = useState(false);
@@ -37,7 +39,8 @@ export default function Button(props: Buttonprops) {
             onMouseLeave={() => setIsHovered(false)}>
 
             {hasIcon && !hasTextContent && icon}
-            {!hasIcon && hasTextContent && <span className='px-3 text-white'>{textContent}</span>}
+            {!hasIcon && hasTextContent && !href && <span className='px-3 text-white'>{textContent}</span>}
+            {!hasIcon && hasTextContent && href && <a href={href} target='_blank' className='px-3 text-white'>{textContent}</a>}
             
         </button>
     )
