@@ -31,6 +31,8 @@
             "list-3": "Hours wasted on manual monitoring",
             "list-4": "Late detection of critical issues",
             "api-status": "API Status: Down",
+            "api-message": "The payment provider API has been unreachable for 23 minutes.",
+            "api-message-detail": "View incident details →",
             "warning-message": "⚠️ Your payment provider has been down for 23 minutes and you didn't know..."
         },
         "third-section": {
@@ -62,6 +64,13 @@
                     "description": "Receive instant SMS and push notifications when issues are detected."
                 }
             }
+        },
+        "fifth-section": {
+            "title": "Start monitoring your APIs today",
+            "description": "Get started in less than 2 minutes."
+        },
+        "footer": {
+            "copyright": "© 2026 DevAlert. All rights reserved."
         }
     }
 }
