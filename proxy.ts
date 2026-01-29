@@ -7,13 +7,13 @@ import { dictionaries } from '@dictionary';
 const locales = Object.keys(dictionaries);
 const defaultLocale = 'fr';
 
-// Détecter la langue préférée du navigateur
+// Detect the browser's preferred language
 function getLocale(request: NextRequest): string {
     const acceptLanguage = request.headers.get('accept-language');
 
     if (!acceptLanguage) return defaultLocale;
 
-    // Parser les langues préférées
+    // Parse preferred languages
     const headers = { 'accept-language': acceptLanguage };
     const languages = new Negotiator({ headers }).languages();
 
@@ -24,19 +24,30 @@ function getLocale(request: NextRequest): string {
     }
 }
 
-export function middleware(request: NextRequest) {
+export function proxy(request: NextRequest) {
     const { pathname } = request.nextUrl;
 
-    // Vérifier si l'URL contient déjà une locale
+    // Check if the URL already contains a locale
     const pathnameHasLocale = locales.some(
         (locale) => pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`
     );
 
     if (pathnameHasLocale) return;
 
-    // Rediriger vers l'URL avec la locale
+    // Redirect to the URL with the locale
     const locale = getLocale(request);
     request.nextUrl.pathname = `/${locale}${pathname}`;
 
     return NextResponse.redirect(request.nextUrl);
 }
+
+export const config = {
+    // Match to tell the middleware which routes to intercept
+    matcher: [
+        // All routes EXCEPT:
+        // - Static files (_next/static)
+        // - Images (_next/image)
+        // - Favicons, robots.txt, etc.
+        '/((?!_next/static|_next/image|favicon.ico|.*\\.(?:svg|png|jpg|jpeg|gif|webp)$).*)',
+    ],
+};
