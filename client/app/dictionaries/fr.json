@@ -1,0 +1,76 @@
+{
+    "navbar": {
+        "feature": "Fonctionnalités",
+        "pricing": "Tarifs",
+        "howItWorks": "Comment ça marche"
+    },
+    "authentication": {
+        "signin": "Se connecter",
+        "signup": "S'inscrire"
+    },
+    "home": {
+        "first-section": {
+            "badge": "Surveillance API en temps réel",
+            "title-1": "Ne manquez jamais une ",
+            "title-2": "interruption ",
+            "title-3": "de service API",
+            "description": "DevAlert surveille vos API critiques en temps réel et envoie des alertes instantanées par SMS et notifications push en cas de problème.",
+            "cta-1": "Commencez à surveiller gratuitement",
+            "cta-2": "Voir une démo",
+            "info": "Le plan gratuit comprend 2 API • Aucune carte de crédit requise"
+        },
+        "banner": {
+            "description": "Surveillez les API sur lesquelles vous comptez"
+        },
+        "second-section": {
+            "badge": "Le Problème",
+            "title": "Les temps d'arrêt de l'API vous coûtent des clients",
+            "description": "Lorsque des API critiques tombent en panne, votre application cesse de fonctionner. La plupart des développeurs l'apprennent par des utilisateurs mécontents ou lorsqu'il est déjà trop tard.",
+            "list-1": "Perte de revenus pendant les pannes",
+            "list-2": "Atteinte à la confiance des utilisateurs et à la réputation",
+            "list-3": "Heures perdues à effectuer une surveillance manuelle",
+            "list-4": "Détection tardive des problèmes critiques",
+            "api-status": "Statut de l'API : indisponible",
+            "api-message": "L'API du prestataire de paiement est inaccessible depuis 23 minutes.",
+            "api-message-detail": "Voir les détails de l'incident →",
+            "warning-message": "⚠️ Votre prestataire de paiement est hors service depuis 23 minutes et vous ne le saviez pas..."
+        },
+        "third-section": {
+            "badge": "La Solution",
+            "title": "Soyez les premiers informés",
+            "description": "DevAlert surveille en permanence vos API critiques et vous avertit dès qu'un problème survient. Corrigez les problèmes avant qu'ils n'aient un impact sur vos utilisateurs.",
+            "list-1": "Contrôles de santé en temps réel toutes les 60 secondes",
+            "list-2": "SMS instantanés et notifications push (à venir)",
+            "list-3": "Surveillez un nombre illimité de terminaux par API",
+            "list-4": "Historique des temps de disponibilité et journaux d'incidents",
+            "api-status": "Tous les systèmes sont opérationnels.",
+            "info-message": "Alertes instantanées par SMS + Push"
+        },
+        "fourth-section": {
+            "badge": "Comment ça marche",
+            "title": "Configuration en moins de 2 minutes",
+            "description": "Commencez à utiliser DevAlert en deux étapes simples. Pas de fichiers de configuration, pas d'installation complexe",
+            "card": {
+                "1": {
+                    "title": "Inscrivez-vous",
+                    "description": "Créez votre compte gratuit en quelques secondes. Aucune carte de crédit n'est requise pour le forfait gratuit."
+                },
+                "2": {
+                    "title": "Sélectionner les API",
+                    "description": "Choisissez les API à surveiller dans notre liste ou ajoutez des points de terminaison personnalisés."
+                },
+                "3": {
+                    "title": "Recevez une alerte",
+                    "description": "Recevez instantanément des SMS et des notifications push lorsque des problèmes sont détectés."
+                }
+            }
+        },
+        "fifth-section": {
+            "title": "Commencez dès aujourd'hui à surveiller vos API",
+            "description": "Commencez en moins de 2 minutes."
+        },
+        "footer": {
+            "copyright": "© 2026 DevAlert. Tous droits réservés."
+        }
+    }
+}
