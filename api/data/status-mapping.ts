@@ -1,16 +1,18 @@
 import type { IStatusIndicator } from "../interfaces/status-json";
 
-interface IIndicator {
+export interface IIndicator {
     gravity:
-    | 'low'
-    | 'medium'
-    | 'high'
-    | 'critical';
+    | 'none'
+    | 'minor'
+    | 'major'
+    | 'critical'
+    | 'maintenance'
     summary:
     | 'All Systems Operational'
     | 'Partial System Outage'
     | 'Major Service Outage'
-    | 'Service Unavailable';
+    | 'Service Unavailable'
+    | 'Service Under Maintenance'
 }
 
 export const STATUS_MAPPING: Record<
@@ -18,21 +20,25 @@ export const STATUS_MAPPING: Record<
     IIndicator
 > = {
     none: {
-        gravity: 'low',
+        gravity: 'none',
         summary: 'All Systems Operational'
     },
     minor: {
-        gravity: 'medium',
+        gravity: 'minor',
         summary: 'Partial System Outage'
     },
     major: {
-        gravity: 'high',
+        gravity: 'major',
         summary: 'Major Service Outage'
     },
     critical: {
         gravity: 'critical',
         summary: 'Service Unavailable'
-    }
+    },
+    maintenance: {
+        gravity: 'maintenance',
+        summary: 'Service Under Maintenance'
+    },
 };
 
 type StatusMapping = typeof STATUS_MAPPING;

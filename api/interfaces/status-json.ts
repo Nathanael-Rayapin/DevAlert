@@ -1,3 +1,5 @@
+import type { IIndicator } from "../data/status-mapping";
+
 export interface IStatusResponse {
     page: IStatusPage;
     status: IStatusIndicator;
@@ -12,6 +14,6 @@ export interface IStatusPage {
 }
 
 export interface IStatusIndicator {
-    indicator: 'none' | 'minor' | 'major' | 'critical';
+    indicator: IIndicator['gravity'];
     description: string;
 }
