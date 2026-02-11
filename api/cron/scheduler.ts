@@ -2,63 +2,7 @@ import { Cron } from 'croner';
 import { performJsonHealthcheck } from './healthcheck';
 import { isApiStatus, isHttpError } from '../utils/type-guards';
 import { getGravityIcon, getHttpErrorIcon } from '../utils/icons';
-
-interface ApiConfig {
-    name: string;
-    url: string;
-    timeout?: number;
-}
-
-const APIS_TO_MONITOR: ApiConfig[] = [
-    {
-        name: 'Vercel',
-        url: 'https://www.vercel-status.com/api/v2/status.json',
-    },
-    {
-        name: 'Github',
-        url: 'https://www.githubstatus.com/api/v2/status.json',
-    },
-    {
-        name: 'Atlassian',
-        url: 'https://status.atlassian.com/api/v2/status.json',
-    },
-    {
-        name: 'Atlassian Bitbucket',
-        url: 'https://bitbucket.status.atlassian.com/api/v2/status.json',
-    },
-    {
-        name: 'DigitalOcean',
-        url: 'https://status.digitalocean.com/api/v2/status.json',
-    },
-    {
-        name: 'Elastic Cloud (Public)',
-        url: 'https://status.elastic.co/api/v2/status.json',
-    },
-    {
-        name: 'Confluence',
-        url: 'https://confluence.status.atlassian.com/api/v2/status.json',
-    },
-    {
-        name: 'Cloudflare',
-        url: 'https://www.cloudflarestatus.com/api/v2/status.json',
-    },
-    {
-        name: 'Shopify',
-        url: 'https://www.shopifystatus.com/api/v2/status.json',
-    },
-    {
-        name: 'Dropbox',
-        url: 'https://status.dropbox.com/api/v2/status.json',
-    },
-    {
-        name: 'Segment',
-        url: 'https://status.segment.com/api/v2/status.json',
-    },
-    {
-        name: 'Twitch',
-        url: 'https://status.twitch.com/api/v2/status.json',
-    },
-];
+import { APIS_TO_MONITOR } from '../data/apis-to-monitor';
 
 async function checkAllApis(): Promise<void> {
     console.log(`Start of health check - ${new Date().toISOString()}`);
