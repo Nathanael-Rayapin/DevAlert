@@ -1,9 +1,14 @@
 # dependencies (bun install)
 node_modules
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
 
 # output
 out
 dist
+build
+*.tsbuildinfo
 *.tgz
 
 # code coverage
@@ -32,3 +37,6 @@ report.[0-9]_.[0-9]_.[0-9]_.[0-9]_.json
 
 # Finder (MacOS) folder config
 .DS_Store
+
+# User configuration
+.api-health-monitor/
