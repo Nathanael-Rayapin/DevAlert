@@ -27,9 +27,12 @@ export { getGravityIcon, getHttpErrorIcon } from './utils/icons';
 export { loadConfig, saveConfig, deleteConfig, configExists, getConfigPath, } from './config/user-config';
 
 // Type exports
-export type { ApiConfig } from './data/apis-to-monitor';
-export type { IIndicator, StatusValue } from './data/status-mapping';
+export type { IApiConfig } from './interfaces/apis-to-monitor';
+export type { IIndicator } from './interfaces/status-mapping';
+export type { ISchedulerOptions } from './interfaces/scheduler';
+export type { IConfigAnswers, IPromptOptions } from './interfaces/prompts';
 export type { IHealthcheckResult } from './interfaces/healthcheck';
 export type { IHttpErrorStatus } from './interfaces/http-error-status';
 export type { IStatusResponse, IStatusPage, IStatusIndicator } from './interfaces/status-json';
-export type { UserConfig } from './config/user-config';
+export type { IUserConfig } from './interfaces/user-config';
+export type { StatusValue } from './data/status-mapping';

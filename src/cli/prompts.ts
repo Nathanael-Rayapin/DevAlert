@@ -1,13 +1,6 @@
 import { select, checkbox, confirm } from '@inquirer/prompts';
 import chalk from 'chalk';
-import { APIS_TO_MONITOR, getApisByCategory } from '../index';
-import type { UserConfig } from '../index';
-
-interface ConfigAnswers {
-    selectedApis: string[];
-    checkInterval: number;
-    timezone: string;
-}
+import { APIS_TO_MONITOR, getApisByCategory, IConfigAnswers, IPromptOptions } from '../index';
 
 /**
  * Displays the welcome header
@@ -40,7 +33,7 @@ function createApiChoices() {
         }
 
         // Category header
-        choices.push({ 
+        choices.push({
             type: 'separator',
             separator: chalk.bold.yellow(`── ${category} ──`)
         });
@@ -62,23 +55,31 @@ function createApiChoices() {
  * Main configuration prompt
  */
 export async function promptConfiguration(
-    existingConfig?: Partial<UserConfig>
-): Promise<ConfigAnswers> {
+    options: IPromptOptions = {}
+): Promise<IConfigAnswers> {
+    const { existingConfig, skipApiSelection = false, preSelectedApis = [] } = options;
+
     console.log(chalk.blue.bold('Configuration de votre monitoring\n'));
 
-    // Step 1: Select APIs
-    const selectedApis = await checkbox<string>({
-        message: chalk.cyan('Selectionnez les APIs a surveiller (Espace = cocher, Entree = valider):'),
-        choices: createApiChoices(),
-        pageSize: 20,
-        required: true,
-        validate: (choices) => {
-            if (choices.length === 0) {
-                return 'Vous devez selectionner au moins une API';
-            }
-            return true;
-        },
-    });
+    // Step 1: Select APIs (SKIP if skipApiSelection = true)
+    let selectedApis: string[];
+
+    if (skipApiSelection) {
+        selectedApis = preSelectedApis;
+    } else {
+        selectedApis = await checkbox<string>({
+            message: chalk.cyan('Selectionnez les APIs a surveiller (Espace = cocher, Entree = valider):'),
+            choices: createApiChoices(),
+            pageSize: 20,
+            required: true,
+            validate: (choices) => {
+                if (choices.length === 0) {
+                    return 'Vous devez selectionner au moins une API';
+                }
+                return true;
+            },
+        });
+    }
 
     // Step 2: Select check interval
     const checkInterval = await select({
@@ -117,7 +118,7 @@ export async function promptConfiguration(
 /**
  * Displays a summary of the configuration
  */
-export function displayConfigSummary(config: ConfigAnswers): void {
+export function displayConfigSummary(config: IConfigAnswers): void {
     console.log(chalk.green.bold('\nConfiguration terminee!\n'));
 
     console.log(chalk.bold('Resumé:'));

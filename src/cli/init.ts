@@ -62,17 +62,18 @@ export async function initCommand(): Promise<void> {
                 return;
         }
 
-        // If custom selection, display the complete checkbox
         let answers;
         if (action === 'custom') {
+            // Mode custom : Checkbox complet
             const existingConfig = configExists() ? loadConfig() : undefined;
-            answers = await promptConfiguration(existingConfig);
+            answers = await promptConfiguration({ existingConfig });
         } else {
-            // For “all,” just request interval + time zone
+            // Mode all : Skip le checkbox
             const existingConfig = loadConfig();
             answers = await promptConfiguration({
-                ...existingConfig,
-                selectedApis,
+                existingConfig,
+                skipApiSelection: true,
+                preSelectedApis: APIS_TO_MONITOR.map(api => api.id)
             });
         }
 

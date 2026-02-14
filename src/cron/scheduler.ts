@@ -1,11 +1,6 @@
 import { Cron } from 'croner';
-import { performJsonHealthcheck, isApiStatus, isHttpError, getGravityIcon, getHttpErrorIcon } from '../index';
-import { type ApiConfig } from '../index';
-
-interface SchedulerOptions {
-    interval: number;
-    timezone: string;
-}
+import { performJsonHealthcheck, isApiStatus, isHttpError, getGravityIcon, getHttpErrorIcon, ISchedulerOptions } from '../index';
+import { type IApiConfig } from '../index';
 
 /**
  * Checks the status of all selected APIs.
@@ -14,7 +9,7 @@ interface SchedulerOptions {
  * - Each API is checked in parallel (performance).
  * - The results are displayed with colored icons.
  */
-async function checkAllApis(apis: ApiConfig[]): Promise<void> {
+async function checkAllApis(apis: IApiConfig[]): Promise<void> {
     console.log(`Start of health check - ${new Date().toISOString()}`);
 
     const promises = apis.map(api =>
@@ -58,8 +53,8 @@ async function checkAllApis(apis: ApiConfig[]): Promise<void> {
 }
 
 export function startHealthcheckScheduler(
-    apis: ApiConfig[],
-    options: SchedulerOptions
+    apis: IApiConfig[],
+    options: ISchedulerOptions
 ): Cron {
     const cronPattern = options.interval >= 60
         // In minutes
@@ -92,7 +87,7 @@ export function stopHealthcheckScheduler(job: Cron): void {
     console.log('🛑 Cron job arrêté');
 }
 
-export async function runImmediateHealthcheck(apis: ApiConfig[]): Promise<void> {
+export async function runImmediateHealthcheck(apis: IApiConfig[]): Promise<void> {
     console.log('🔍 Healthcheck immédiat...\n');
     await checkAllApis(apis);
 }

@@ -1,14 +1,7 @@
 import * as fs from 'fs';
 import * as path from 'path';
 import * as os from 'os';
-
-export interface UserConfig {
-    selectedApis: string[];
-    checkInterval: number;
-    timezone: string;
-    createdAt: string;
-    updatedAt: string;
-}
+import { IUserConfig } from '../index';
 
 /**
  * Path to the configuration file in the user's home directory
@@ -23,7 +16,7 @@ const CONFIG_FILE = path.join(CONFIG_DIR, 'config.json');
 /**
  * Default configuration
  */
-const DEFAULT_CONFIG: UserConfig = {
+const DEFAULT_CONFIG: IUserConfig = {
     selectedApis: [],
     checkInterval: 60,
     timezone: 'Europe/Paris',
@@ -43,7 +36,7 @@ function ensureConfigDir(): void {
 /**
  * Load user configuration
  */
-export function loadConfig(): UserConfig {
+export function loadConfig(): IUserConfig {
     try {
         if (!fs.existsSync(CONFIG_FILE)) {
             return { ...DEFAULT_CONFIG };
@@ -69,12 +62,12 @@ export function loadConfig(): UserConfig {
  * 
  * @param config - Partial configuration to be merged with the existing one
  */
-export function saveConfig(config: Partial<UserConfig>): void {
+export function saveConfig(config: Partial<IUserConfig>): void {
     try {
         ensureConfigDir();
 
         const currentConfig = loadConfig();
-        const updatedConfig: UserConfig = {
+        const updatedConfig: IUserConfig = {
             ...currentConfig,
             ...config,
             updatedAt: new Date().toISOString(),

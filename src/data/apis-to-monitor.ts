@@ -1,12 +1,6 @@
-export interface ApiConfig {
-    id: string;
-    name: string;
-    url: string;
-    timeout?: number;
-    category: string;
-}
+import { IApiConfig } from "../index";
 
-export const APIS_TO_MONITOR: ApiConfig[] = [
+export const APIS_TO_MONITOR: IApiConfig[] = [
     // Cloud Infrastructure
     {
         id: 'vercel',
