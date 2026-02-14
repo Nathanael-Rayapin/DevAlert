@@ -128,7 +128,6 @@ program
         console.log(chalk.cyan.bold('\n📋 APIs disponibles\n'));
 
         if (options.category) {
-            // Filtre par catégorie
             const apisByCategory = getApisByCategory();
             const apis = apisByCategory[options.category];
 

@@ -16,21 +16,20 @@ import {
 } from '../index';
 
 /**
- * Commande d'initialisation de la configuration
+ * Configuration initialization command
  * 
- * Raisonnement du flow :
- * 1. Vérifie si config existe → propose de reconfigurer
- * 2. Menu rapide (tous/custom)
- * 3. Si custom → affiche checkbox détaillé
- * 4. Demande intervalle + timezone
- * 5. Sauvegarde
- * 6. Optionnellement démarre le monitoring
+ * Flow reasoning:
+ * 1. Checks if config exists → proposes to reconfigure
+ * 2. Quick menu (all/custom)
+ * 3. If custom → display detailed checkbox
+ * 4. Request interval + time zone
+ * 5. Save
+ * 6. Optionally start monitoring
  */
 export async function initCommand(): Promise<void> {
     try {
         displayWelcome();
 
-        // Check if a configuration already exists
         if (configExists()) {
             console.log(chalk.yellow('Une configuration existe déjà à:'));
             console.log(chalk.gray(`   ${getConfigPath()}\n`));
@@ -44,7 +43,6 @@ export async function initCommand(): Promise<void> {
             }
         }
 
-        // Quick selection menu
         const { action } = await promptQuickSelection();
 
         let selectedApis: string[] = [];
