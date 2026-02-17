@@ -13,7 +13,7 @@ async function checkAllApis(apis: IApiConfig[]): Promise<void> {
     console.log(`Start of health check - ${new Date().toISOString()}`);
 
     const promises = apis.map(api =>
-        performJsonHealthcheck(api.url, api.timeout)
+        performJsonHealthcheck(api.statusUrl, api.timeout)
     );
 
     const results = await Promise.allSettled(promises);
