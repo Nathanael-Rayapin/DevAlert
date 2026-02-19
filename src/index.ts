@@ -8,7 +8,7 @@
  */
 
 // Exports main functions
-export { performJsonHealthcheck } from './cron/healthcheck';
+export { fetchApiStatus } from './cron/fetch-status';
 export { startHealthcheckScheduler, stopHealthcheckScheduler, runImmediateHealthcheck, } from './cron/scheduler';
 
 // Data exports

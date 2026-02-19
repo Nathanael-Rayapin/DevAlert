@@ -1,7 +1,7 @@
 import { STATUS_MAPPING, mapHttpStatus } from "../index";
 import type { IHealthcheckResult, IStatusResponse } from "../index";
 
-export async function performJsonHealthcheck(
+export async function fetchApiStatus(
     url: string,
     timeoutMs: number = 5000
 ): Promise<IHealthcheckResult> {

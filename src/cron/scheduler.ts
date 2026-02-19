@@ -1,5 +1,5 @@
 import { Cron } from 'croner';
-import { performJsonHealthcheck, isApiStatus, isHttpError, getGravityIcon, getHttpErrorIcon, ISchedulerOptions } from '../index';
+import { fetchApiStatus, isApiStatus, isHttpError, getGravityIcon, getHttpErrorIcon, ISchedulerOptions } from '../index';
 import { type IApiConfig } from '../index';
 
 /**
@@ -13,7 +13,7 @@ async function checkAllApis(apis: IApiConfig[]): Promise<void> {
     console.log(`Start of health check - ${new Date().toISOString()}`);
 
     const promises = apis.map(api =>
-        performJsonHealthcheck(api.statusUrl, api.timeout)
+        fetchApiStatus(api.statusUrl, api.timeout)
     );
 
     const results = await Promise.allSettled(promises);

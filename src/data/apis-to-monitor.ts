@@ -10,6 +10,7 @@ export const APIS_TO_MONITOR: IApiConfig[] = [
         name: 'Vercel',
         url: 'https://www.vercel-status.com',
         statusUrl: 'https://www.vercel-status.com/api/v2/status.json',
+        incidentsUrl: 'https://www.vercel-status.com/api/v2/incidents.json',
         category: 'Cloud Infrastructure',
     },
     {
@@ -17,6 +18,7 @@ export const APIS_TO_MONITOR: IApiConfig[] = [
         name: 'Netlify',
         url: 'https://www.netlifystatus.com',
         statusUrl: 'https://www.netlifystatus.com/api/v2/status.json',
+        incidentsUrl: 'https://www.netlifystatus.com/api/v2/incidents.json',
         category: 'Cloud Infrastructure',
     },
     {
@@ -24,6 +26,7 @@ export const APIS_TO_MONITOR: IApiConfig[] = [
         name: 'Render',
         url: 'https://status.render.com',
         statusUrl: 'https://status.render.com/api/v2/status.json',
+        incidentsUrl: 'https://status.render.com/api/v2/incidents.json',
         category: 'Cloud Infrastructure',
     },
     {
@@ -31,6 +34,7 @@ export const APIS_TO_MONITOR: IApiConfig[] = [
         name: 'DigitalOcean',
         url: 'https://status.digitalocean.com',
         statusUrl: 'https://status.digitalocean.com/api/v2/status.json',
+        incidentsUrl: 'https://status.digitalocean.com/api/v2/incidents.json',
         category: 'Cloud Infrastructure',
     },
     {
@@ -38,6 +42,7 @@ export const APIS_TO_MONITOR: IApiConfig[] = [
         name: 'Linode (Akamai)',
         url: 'https://status.linode.com',
         statusUrl: 'https://status.linode.com/api/v2/status.json',
+        incidentsUrl: 'https://status.linode.com/api/v2/incidents.json',
         category: 'Cloud Infrastructure',
     },
     {
@@ -45,6 +50,7 @@ export const APIS_TO_MONITOR: IApiConfig[] = [
         name: 'Cloudflare',
         url: 'https://www.cloudflarestatus.com',
         statusUrl: 'https://www.cloudflarestatus.com/api/v2/status.json',
+        incidentsUrl: 'https://www.cloudflarestatus.com/api/v2/incidents.json',
         category: 'Cloud Infrastructure',
     },
     // {
@@ -66,6 +72,7 @@ export const APIS_TO_MONITOR: IApiConfig[] = [
         name: 'Fly.io',
         url: 'https://status.flyio.net',
         statusUrl: 'https://status.flyio.net/api/v2/status.json',
+        incidentsUrl: 'https://status.flyio.net/api/v2/incidents.json',
         category: 'Cloud Infrastructure',
     },
     // {
@@ -84,6 +91,7 @@ export const APIS_TO_MONITOR: IApiConfig[] = [
         name: 'GitHub',
         url: 'https://www.githubstatus.com',
         statusUrl: 'https://www.githubstatus.com/api/v2/status.json',
+        incidentsUrl: 'https://www.githubstatus.com/api/v2/incidents.json',
         category: 'Developer Tools',
     },
     {
@@ -91,6 +99,7 @@ export const APIS_TO_MONITOR: IApiConfig[] = [
         name: 'Atlassian',
         url: 'https://status.atlassian.com',
         statusUrl: 'https://status.atlassian.com/api/v2/status.json',
+        incidentsUrl: 'https://status.atlassian.com/api/v2/incidents.json',
         category: 'Developer Tools',
     },
     {
@@ -98,6 +107,7 @@ export const APIS_TO_MONITOR: IApiConfig[] = [
         name: 'Jira',
         url: 'https://jira-software.status.atlassian.com/',
         statusUrl: 'https://jira-software.status.atlassian.com/api/v2/status.json',
+        incidentsUrl: 'https://jira-software.status.atlassian.com/api/v2/incidents.json',
         category: 'Developer Tools',
     },
     {
@@ -105,6 +115,7 @@ export const APIS_TO_MONITOR: IApiConfig[] = [
         name: 'Jira Service Management',
         url: 'https://jira-service-management.status.atlassian.com/',
         statusUrl: 'https://jira-service-management.status.atlassian.com/api/v2/status.json',
+        incidentsUrl: 'https://jira-service-management.status.atlassian.com/api/v2/incidents.json',
         category: 'Developer Tools',
     },
     {
@@ -112,6 +123,7 @@ export const APIS_TO_MONITOR: IApiConfig[] = [
         name: 'Jira Work Management',
         url: 'https://jira-work-management.status.atlassian.com',
         statusUrl: 'https://jira-work-management.status.atlassian.com/api/v2/status.json',
+        incidentsUrl: 'https://jira-work-management.status.atlassian.com/api/v2/incidents.json',
         category: 'Developer Tools',
     },
     {
@@ -119,6 +131,7 @@ export const APIS_TO_MONITOR: IApiConfig[] = [
         name: 'Jira Product Discovery',
         url: 'https://jira-product-discovery.status.atlassian.com',
         statusUrl: 'https://jira-product-discovery.status.atlassian.com/api/v2/status.json',
+        incidentsUrl: 'https://jira-product-discovery.status.atlassian.com/api/v2/incidents.json',
         category: 'Developer Tools',
     },
     {
@@ -126,6 +139,7 @@ export const APIS_TO_MONITOR: IApiConfig[] = [
         name: 'Jira Align',
         url: 'https://jira-align.status.atlassian.com',
         statusUrl: 'https://jira-align.status.atlassian.com/api/v2/status.json',
+        incidentsUrl: 'https://jira-align.status.atlassian.com/api/v2/incidents.json',
         category: 'Developer Tools',
     },
     {
@@ -133,6 +147,7 @@ export const APIS_TO_MONITOR: IApiConfig[] = [
         name: 'Atlassian Bitbucket',
         url: 'https://bitbucket.status.atlassian.com',
         statusUrl: 'https://bitbucket.status.atlassian.com/api/v2/status.json',
+        incidentsUrl: 'https://bitbucket.status.atlassian.com/api/v2/incidents.json',
         category: 'Developer Tools',
     },
     {
@@ -140,6 +155,7 @@ export const APIS_TO_MONITOR: IApiConfig[] = [
         name: 'Confluence',
         url: 'https://confluence.status.atlassian.com',
         statusUrl: 'https://confluence.status.atlassian.com/api/v2/status.json',
+        incidentsUrl: 'https://confluence.status.atlassian.com/api/v2/incidents.json',
         category: 'Developer Tools',
     },
     {
@@ -147,6 +163,7 @@ export const APIS_TO_MONITOR: IApiConfig[] = [
         name: 'Compass',
         url: 'https://compass.status.atlassian.com',
         statusUrl: 'https://metastatuspage.com/api/v2/status.json',
+        incidentsUrl: 'https://metastatuspage.com/api/v2/incidents.json',
         category: 'Developer Tools',
     },
     {
@@ -154,6 +171,7 @@ export const APIS_TO_MONITOR: IApiConfig[] = [
         name: 'Rovo Dev',
         url: 'https://rovodev.status.atlassian.com',
         statusUrl: 'https://rovodev.status.atlassian.com/api/v2/status.json',
+        incidentsUrl: 'https://rovodev.status.atlassian.com/api/v2/incidents.json',
         category: 'Developer Tools',
     },
     {
@@ -161,6 +179,7 @@ export const APIS_TO_MONITOR: IApiConfig[] = [
         name: 'Atlassian Statuspage',
         url: 'http://metastatuspage.com',
         statusUrl: 'https://compass.status.atlassian.com/api/v2/status.json',
+        incidentsUrl: 'https://compass.status.atlassian.com/api/v2/incidents.json',
         category: 'Developer Tools',
     },
     {
@@ -168,6 +187,7 @@ export const APIS_TO_MONITOR: IApiConfig[] = [
         name: 'Atlassian Migration',
         url: 'https://migrations.status.atlassian.com',
         statusUrl: 'https://migrations.status.atlassian.com/api/v2/status.json',
+        incidentsUrl: 'https://migrations.status.atlassian.com/api/v2/incidents.json',
         category: 'Developer Tools',
     },
     {
@@ -175,6 +195,7 @@ export const APIS_TO_MONITOR: IApiConfig[] = [
         name: 'npm',
         url: 'https://status.npmjs.org',
         statusUrl: 'https://status.npmjs.org/api/v2/status.json',
+        incidentsUrl: 'https://status.npmjs.org/api/v2/incidents.json',
         category: 'Developer Tools',
     },
     {
@@ -182,6 +203,7 @@ export const APIS_TO_MONITOR: IApiConfig[] = [
         name: 'Datadog US1',
         url: 'https://status.datadoghq.com',
         statusUrl: 'https://status.datadoghq.com/api/v2/status.json',
+        incidentsUrl: 'https://status.datadoghq.com/api/v2/incidents.json',
         category: 'Developer Tools',
     },
     {
@@ -189,6 +211,7 @@ export const APIS_TO_MONITOR: IApiConfig[] = [
         name: 'Sentry',
         url: 'https://status.sentry.io',
         statusUrl: 'https://status.sentry.io/api/v2/status.json',
+        incidentsUrl: 'https://status.sentry.io/api/v2/incidents.json',
         category: 'Developer Tools',
     },
     {
@@ -196,6 +219,7 @@ export const APIS_TO_MONITOR: IApiConfig[] = [
         name: 'Elastic Cloud',
         url: 'https://status.elastic.co',
         statusUrl: 'https://status.elastic.co/api/v2/status.json',
+        incidentsUrl: 'https://status.elastic.co/api/v2/incidents.json',
         category: 'Developer Tools',
     },
     {
@@ -203,6 +227,7 @@ export const APIS_TO_MONITOR: IApiConfig[] = [
         name: 'New Relic',
         url: 'https://status.newrelic.com',
         statusUrl: 'https://status.newrelic.com/api/v2/status.json',
+        incidentsUrl: 'https://status.newrelic.com/api/v2/incidents.json',
         category: 'Developer Tools',
     },
     // {
@@ -217,6 +242,7 @@ export const APIS_TO_MONITOR: IApiConfig[] = [
         name: 'Opsgenie',
         url: 'https://opsgenie.status.atlassian.com',
         statusUrl: 'https://opsgenie.status.atlassian.com/api/v2/status.json',
+        incidentsUrl: 'https://opsgenie.status.atlassian.com/api/v2/incidents.json',
         category: 'Developer Tools',
     },
     {
@@ -224,6 +250,7 @@ export const APIS_TO_MONITOR: IApiConfig[] = [
         name: 'Linear',
         url: 'https://linearstatus.com',
         statusUrl: 'https://linearstatus.com/api/v2/status.json',
+        incidentsUrl: 'https://linearstatus.com/api/v2/incidents.json',
         category: 'Developer Tools',
     },
     // {
@@ -238,6 +265,7 @@ export const APIS_TO_MONITOR: IApiConfig[] = [
         name: 'CircleCI',
         url: 'https://status.circleci.com',
         statusUrl: 'https://status.circleci.com/api/v2/status.json',
+        incidentsUrl: 'https://status.circleci.com/api/v2/incidents.json',
         category: 'Developer Tools',
     },
     {
@@ -245,6 +273,7 @@ export const APIS_TO_MONITOR: IApiConfig[] = [
         name: 'Cloudinary',
         url: 'https://status.cloudinary.com',
         statusUrl: 'https://status.cloudinary.com/api/v2/status.json',
+        incidentsUrl: 'https://status.cloudinary.com/api/v2/incidents.json',
         category: 'Developer Tools',
     },
 
@@ -256,6 +285,7 @@ export const APIS_TO_MONITOR: IApiConfig[] = [
         name: 'MongoDB Cloud',
         url: 'https://status.cloud.mongodb.com',
         statusUrl: 'https://status.cloud.mongodb.com/api/v2/status.json',
+        incidentsUrl: 'https://status.cloud.mongodb.com/api/v2/incidents.json',
         category: 'Databases',
     },
     {
@@ -263,6 +293,7 @@ export const APIS_TO_MONITOR: IApiConfig[] = [
         name: 'Redis Cloud',
         url: 'https://status.redislabs.com',
         statusUrl: 'https://status.redislabs.com/api/v2/status.json',
+        incidentsUrl: 'https://status.redislabs.com/api/v2/incidents.json',
         category: 'Databases',
     },
     {
@@ -270,6 +301,7 @@ export const APIS_TO_MONITOR: IApiConfig[] = [
         name: 'PlanetScale',
         url: 'https://www.planetscalestatus.com',
         statusUrl: 'https://www.planetscalestatus.com/api/v2/status.json',
+        incidentsUrl: 'https://www.planetscalestatus.com/api/v2/incidents.json',
         category: 'Databases',
     },
     {
@@ -277,6 +309,7 @@ export const APIS_TO_MONITOR: IApiConfig[] = [
         name: 'Supabase',
         url: 'https://status.supabase.com',
         statusUrl: 'https://status.supabase.com/api/v2/status.json',
+        incidentsUrl: 'https://status.supabase.com/api/v2/incidents.json',
         category: 'Databases',
     },
     // {
@@ -291,6 +324,7 @@ export const APIS_TO_MONITOR: IApiConfig[] = [
         name: 'Airtable',
         url: 'https://status.airtable.com',
         statusUrl: 'https://status.airtable.com/api/v2/status.json',
+        incidentsUrl: 'https://status.airtable.com/api/v2/incidents.json',
         category: 'Databases',
     },
 
@@ -302,6 +336,7 @@ export const APIS_TO_MONITOR: IApiConfig[] = [
         name: 'Discord',
         url: 'https://discordstatus.com',
         statusUrl: 'https://discordstatus.com/api/v2/status.json',
+        incidentsUrl: 'https://discordstatus.com/api/v2/incidents.json',
         category: 'Communication',
     },
     {
@@ -309,6 +344,7 @@ export const APIS_TO_MONITOR: IApiConfig[] = [
         name: 'Zoom',
         url: 'https://status.zoom.us',
         statusUrl: 'https://status.zoom.us/api/v2/status.json',
+        incidentsUrl: 'https://status.zoom.us/api/v2/incidents.json',
         category: 'Communication',
     },
     {
@@ -316,6 +352,7 @@ export const APIS_TO_MONITOR: IApiConfig[] = [
         name: 'Twitch',
         url: 'https://status.twitch.com',
         statusUrl: 'https://status.twitch.com/api/v2/status.json',
+        incidentsUrl: 'https://status.twitch.com/api/v2/incidents.json',
         category: 'Communication',
     },
     {
@@ -323,6 +360,7 @@ export const APIS_TO_MONITOR: IApiConfig[] = [
         name: 'Twilio',
         url: 'https://status.twilio.com',
         statusUrl: 'https://status.twilio.com/api/v2/status.json',
+        incidentsUrl: 'https://status.twilio.com/api/v2/incidents.json',
         category: 'Communication',
     },
     {
@@ -330,6 +368,7 @@ export const APIS_TO_MONITOR: IApiConfig[] = [
         name: 'Intercom',
         url: 'https://www.intercomstatus.com',
         statusUrl: 'https://www.intercomstatus.com/api/v2/status.json',
+        incidentsUrl: 'https://www.intercomstatus.com/api/v2/incidents.json',
         category: 'Communication',
     },
     {
@@ -337,6 +376,7 @@ export const APIS_TO_MONITOR: IApiConfig[] = [
         name: 'Customer Service Management',
         url: 'https://customer-service-management.status.atlassian.com',
         statusUrl: 'https://customer-service-management.status.atlassian.com/api/v2/status.json',
+        incidentsUrl: 'https://customer-service-management.status.atlassian.com/api/v2/incidents.json',
         category: 'Communication',
     },
     {
@@ -344,6 +384,7 @@ export const APIS_TO_MONITOR: IApiConfig[] = [
         name: 'Talent',
         url: 'https://talent.status.atlassian.com',
         statusUrl: 'https://talent.status.atlassian.com/api/v2/status.json',
+        incidentsUrl: 'https://talent.status.atlassian.com/api/v2/incidents.json',
         category: 'Communication',
     },
 
@@ -355,6 +396,7 @@ export const APIS_TO_MONITOR: IApiConfig[] = [
         name: 'OpenAI',
         url: 'https://status.openai.com',
         statusUrl: 'https://status.openai.com/api/v2/status.json',
+        incidentsUrl: 'https://status.openai.com/api/v2/incidents.json',
         category: 'AI & Machine Learning',
     },
     {
@@ -362,6 +404,7 @@ export const APIS_TO_MONITOR: IApiConfig[] = [
         name: 'Anthropic (Claude)',
         url: 'https://status.anthropic.com',
         statusUrl: 'https://status.anthropic.com/api/v2/status.json',
+        incidentsUrl: 'https://status.anthropic.com/api/v2/incidents.json',
         category: 'AI & Machine Learning',
     },
     // {
@@ -376,6 +419,7 @@ export const APIS_TO_MONITOR: IApiConfig[] = [
         name: 'Replicate',
         url: 'https://status.replicate.com',
         statusUrl: 'https://status.replicate.com/api/v2/status.json',
+        incidentsUrl: 'https://status.replicate.com/api/v2/incidents.json',
         category: 'AI & Machine Learning',
     },
 
@@ -387,6 +431,7 @@ export const APIS_TO_MONITOR: IApiConfig[] = [
         name: 'Shopify',
         url: 'https://www.shopifystatus.com',
         statusUrl: 'https://www.shopifystatus.com/api/v2/status.json',
+        incidentsUrl: 'https://www.shopifystatus.com/api/v2/incidents.json',
         category: 'E-commerce',
     },
     // {
@@ -412,6 +457,7 @@ export const APIS_TO_MONITOR: IApiConfig[] = [
         name: 'Dropbox',
         url: 'https://status.dropbox.com',
         statusUrl: 'https://status.dropbox.com/api/v2/status.json',
+        incidentsUrl: 'https://status.dropbox.com/api/v2/incidents.json',
         category: 'Productivity',
     },
     {
@@ -419,6 +465,7 @@ export const APIS_TO_MONITOR: IApiConfig[] = [
         name: 'Notion',
         url: 'https://www.notion-status.com',
         statusUrl: 'https://www.notion-status.com/api/v2/status.json',
+        incidentsUrl: 'https://www.notion-status.com/api/v2/incidents.json',
         category: 'Productivity',
     },
     {
@@ -426,6 +473,7 @@ export const APIS_TO_MONITOR: IApiConfig[] = [
         name: 'Trello',
         url: 'https://trello.status.atlassian.com',
         statusUrl: 'https://trello.status.atlassian.com/api/v2/status.json',
+        incidentsUrl: 'https://trello.status.atlassian.com/api/v2/incidents.json',
         category: 'Productivity',
     },
     {
@@ -433,6 +481,7 @@ export const APIS_TO_MONITOR: IApiConfig[] = [
         name: 'Figma',
         url: 'https://status.figma.com',
         statusUrl: 'https://status.figma.com/api/v2/status.json',
+        incidentsUrl: 'https://status.figma.com/api/v2/incidents.json',
         category: 'Productivity',
     },
     {
@@ -440,6 +489,7 @@ export const APIS_TO_MONITOR: IApiConfig[] = [
         name: 'Asana',
         url: 'https://status.asana.com',
         statusUrl: 'https://status.asana.com/api/v2/status.json',
+        incidentsUrl: 'https://status.asana.com/api/v2/incidents.json',
         category: 'Productivity',
     },
     {
@@ -447,6 +497,7 @@ export const APIS_TO_MONITOR: IApiConfig[] = [
         name: 'Atlas',
         url: 'https://atlas.status.atlassian.com',
         statusUrl: 'https://atlas.status.atlassian.com/api/v2/status.json',
+        incidentsUrl: 'https://atlas.status.atlassian.com/api/v2/incidents.json',
         category: 'Productivity',
     },
     {
@@ -454,6 +505,7 @@ export const APIS_TO_MONITOR: IApiConfig[] = [
         name: 'Atlassian Focus',
         url: 'https://focus.status.atlassian.com',
         statusUrl: 'https://focus.status.atlassian.com/api/v2/status.json',
+        incidentsUrl: 'https://focus.status.atlassian.com/api/v2/incidents.json',
         category: 'Productivity',
     },
     {
@@ -461,6 +513,7 @@ export const APIS_TO_MONITOR: IApiConfig[] = [
         name: 'Loom',
         url: 'https://loom.status.atlassian.com',
         statusUrl: 'https://loom.status.atlassian.com/api/v2/status.json',
+        incidentsUrl: 'https://loom.status.atlassian.com/api/v2/incidents.json',
         category: 'Productivity',
     },
     {
@@ -468,6 +521,7 @@ export const APIS_TO_MONITOR: IApiConfig[] = [
         name: 'Atlassian Analytics',
         url: 'https://analytics.status.atlassian.com',
         statusUrl: 'https://analytics.status.atlassian.com/api/v2/status.json',
+        incidentsUrl: 'https://analytics.status.atlassian.com/api/v2/incidents.json',
         category: 'Productivity',
     },
     {
@@ -475,6 +529,7 @@ export const APIS_TO_MONITOR: IApiConfig[] = [
         name: 'Rovo',
         url: 'https://rovo.status.atlassian.com',
         statusUrl: 'https://rovo.status.atlassian.com/api/v2/status.json',
+        incidentsUrl: 'https://rovo.status.atlassian.com/api/v2/incidents.json',
         category: 'Productivity',
     },
 
@@ -486,6 +541,7 @@ export const APIS_TO_MONITOR: IApiConfig[] = [
         name: 'Segment',
         url: 'https://status.segment.com',
         statusUrl: 'https://status.segment.com/api/v2/status.json',
+        incidentsUrl: 'https://status.segment.com/api/v2/incidents.json',
         category: 'Analytics',
     },
     {
@@ -493,6 +549,7 @@ export const APIS_TO_MONITOR: IApiConfig[] = [
         name: 'Mixpanel',
         url: 'https://status.mixpanel.com',
         statusUrl: 'https://status.mixpanel.com/api/v2/status.json',
+        incidentsUrl: 'https://status.mixpanel.com/api/v2/incidents.json',
         category: 'Analytics',
     },
 
@@ -504,6 +561,7 @@ export const APIS_TO_MONITOR: IApiConfig[] = [
         name: 'SendGrid',
         url: 'https://status.sendgrid.com',
         statusUrl: 'https://status.sendgrid.com/api/v2/status.json',
+        incidentsUrl: 'https://status.sendgrid.com/api/v2/incidents.json',
         category: 'Email Services',
     },
     {
@@ -511,6 +569,7 @@ export const APIS_TO_MONITOR: IApiConfig[] = [
         name: 'Mailgun',
         url: 'https://status.mailgun.com',
         statusUrl: 'https://status.mailgun.com/api/v2/status.json',
+        incidentsUrl: 'https://status.mailgun.com/api/v2/incidents.json',
         category: 'Email Services',
     },
     // {
@@ -550,6 +609,7 @@ export const APIS_TO_MONITOR: IApiConfig[] = [
         name: 'Guard',
         url: 'https://guard.status.atlassian.com',
         statusUrl: 'https://guard.status.atlassian.com/api/v2/status.json',
+        incidentsUrl: 'https://guard.status.atlassian.com/api/v2/incidents.json',
         category: 'Auth & Security',
     },
 ];
