@@ -27,12 +27,14 @@ export { getGravityIcon, getHttpErrorIcon } from './utils/icons';
 export { loadConfig, saveConfig, deleteConfig, configExists, getConfigPath, } from './config/user-config';
 
 // Type exports
-export type { IApiConfig } from './interfaces/apis-to-monitor';
-export type { IIndicator } from './interfaces/status-mapping';
-export type { ISchedulerOptions } from './interfaces/scheduler';
-export type { IConfigAnswers, IPromptOptions } from './interfaces/prompts';
-export type { IHealthcheckResult } from './interfaces/healthcheck';
+export type { IApiConfig } from './data/apis-to-monitor.interface';
+export type { IIndicator } from './data/status-mapping.interface';
+export type { ISchedulerOptions } from './cron/scheduler.interface';
+export type { IConfigAnswers, IPromptOptions } from './cli/prompts.interface';
+export type { IFetchStatusResult } from './cron/fetch-status.interface';
 export type { IHttpErrorStatus } from './interfaces/http-error-status';
-export type { IStatusResponse, IStatusPage, IStatusIndicator } from './interfaces/status-json';
-export type { IUserConfig } from './interfaces/user-config';
+export type { IStatusResponse, IStatusIndicator } from './interfaces/status-json';
+export type { IIncidentsResponse, Incident, IncidentUpdate } from './interfaces/incidents-json';
+export type { IPageInfo } from './interfaces/page-info-json';
+export type { IUserConfig } from './config/user-config.interface';
 export type { StatusValue } from './data/status-mapping';

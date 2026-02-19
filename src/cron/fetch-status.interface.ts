@@ -1,6 +1,6 @@
 import type { StatusValue, IHttpErrorStatus } from "../index";
 
-export interface IHealthcheckResult {
+export interface IFetchStatusResult {
     url: string;
     status: StatusValue | IHttpErrorStatus;
     statusCode?: number;

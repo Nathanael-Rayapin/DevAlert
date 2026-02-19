@@ -1,16 +1,8 @@
-import type { IIndicator } from "../index";
+import type { IIndicator, IPageInfo } from "../index";
 
 export interface IStatusResponse {
-    page: IStatusPage;
+    page: IPageInfo;
     status: IStatusIndicator;
-}
-
-export interface IStatusPage {
-    id: string;
-    name: string;
-    url: string;
-    time_zone: string;
-    updated_at: string;
 }
 
 export interface IStatusIndicator {

@@ -258,7 +258,7 @@ Full TypeScript support with exported types:
 ```typescript
 import type { 
     ApiConfig, 
-    IHealthcheckResult, 
+    IFetchStatusResult, 
     UserConfig 
 } from '@ton-username/api-health-monitor';
 ```
