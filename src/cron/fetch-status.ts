@@ -1,4 +1,4 @@
-import { STATUS_MAPPING, mapHttpStatus } from "../index";
+import { STATUS_MAPPING, mapHttpStatus, API_VERSION } from "../index";
 import type { IFetchStatusResult, IStatusResponse } from "../index";
 
 export async function fetchApiStatus(
@@ -13,9 +13,9 @@ export async function fetchApiStatus(
             method: 'GET',
             signal: AbortSignal.timeout(timeoutMs),
             headers: {
-                'User-Agent': 'Healthcheck-API/0.1',
-                'Accept': 'application/json, text/plain, */*'
-            }
+                'User-Agent': `API-Health-Monitor/${API_VERSION}`,
+                'Accept': 'application/json',
+            },
         });
 
         const responseTime = Date.now() - startTime;
