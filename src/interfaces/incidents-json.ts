@@ -1,29 +1,29 @@
+import { IncidentImpact, IncidentStatus } from "../index";
 import { IPageInfo } from "./page-info-json";
 
 export interface IIncidentsResponse {
     page: IPageInfo;
-    incidents: Incident[];
+    incidents: IIncident[];
 }
 
-export interface Incident {
+export interface IIncident {
     id: string;
     name: string;
-    status: 'investigating' | 'identified' | 'monitoring' | 'resolved' | 'postmortem';
-
+    status: IncidentStatus;
     created_at: string;
     updated_at: string;
     monitoring_at: string | null;
     resolved_at: string | null;
-    impact: 'none' | 'minor' | 'major' | 'critical';
+    impact: IncidentImpact;
     shortlink: string;
     started_at: string;
     page_id: string;
-    incident_updates: IncidentUpdate[];
+    incident_updates: IIncidentUpdate[];
 }
 
-export interface IncidentUpdate {
+export interface IIncidentUpdate {
     id: string;
-    status: 'investigating' | 'identified' | 'monitoring' | 'resolved' | 'postmortem';
+    status: IncidentStatus;
     body: string;
     incident: string;
     created_at: string;
