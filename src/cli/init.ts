@@ -6,8 +6,6 @@ import {
     promptReconfigure,
     displayConfigSummary,
     promptQuickSelection,
-} from './prompts';
-import {
     loadConfig,
     saveConfig,
     configExists,
