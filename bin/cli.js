@@ -1,16 +1,5 @@
 #!/usr/bin/env node
 
-/**
- * Global CLI entry point
- * 
- * This file is referenced in package.json “bin”
- * It will be copied to /usr/local/bin/api-monitor during global installation
- * 
- * Reasoning:
- * - In dev: Uses tsx to run TypeScript directly
- * - In prod: Points to the compiled JS in dist/
- */
-
 const path = require('path');
 const { spawn } = require('child_process');
 
