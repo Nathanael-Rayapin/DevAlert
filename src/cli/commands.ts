@@ -11,7 +11,12 @@ import {
     getApisByCategory,
     APIS_TO_MONITOR,
     startHealthcheckScheduler,
-    deleteConfig
+    deleteConfig,
+    promptIncidentsConfiguration,
+    displayIncidentsConfigSummary,
+    fetchAllIncidents,
+    filterAndSortIncidents,
+    displayIncidents
 } from '../index';
 
 const program = new Command();
@@ -100,7 +105,7 @@ program
         const config = loadConfig();
         const selectedApis = getApisByIds(config.selectedApis);
 
-        console.log(chalk.cyan.bold('\n📊 Configuration actuelle\n'));
+        console.log(chalk.cyan.bold('\nConfiguration actuelle\n'));
         console.log(chalk.gray('─'.repeat(50)));
         console.log(chalk.cyan('Fichier:'), chalk.white(getConfigPath()));
         console.log(chalk.cyan('APIs:'), chalk.white(selectedApis.length + ' sélectionnées'));
@@ -125,7 +130,7 @@ program
     .description('List all available APIs to monitor')
     .option('-c, --category <category>', 'Filter by category')
     .action((options) => {
-        console.log(chalk.cyan.bold('\n📋 APIs disponibles\n'));
+        console.log(chalk.cyan.bold('\nAPIs disponibles\n'));
 
         if (options.category) {
             const apisByCategory = getApisByCategory();
@@ -159,6 +164,70 @@ program
             });
 
             console.log(chalk.gray(`Total: ${APIS_TO_MONITOR.length} APIs disponibles\n`));
+        }
+    });
+
+/**
+ * Command: api-monitor incidents
+ * Displays recent incidents for monitored APIs
+ */
+program
+    .command('incidents')
+    .description('Display recent incidents for monitored APIs')
+    .action(async () => {
+        if (!configExists()) {
+            console.log(chalk.red('❌ Aucune configuration trouvée'));
+            console.log(chalk.yellow('💡 Lancez d\'abord:'), chalk.cyan('api-monitor init\n'));
+            process.exit(1);
+        }
+
+        const config = loadConfig();
+
+        if (config.selectedApis.length === 0) {
+            console.log(chalk.red('❌ Aucune API sélectionnée'));
+            console.log(chalk.yellow('💡 Reconfigurez avec:'), chalk.cyan('api-monitor init\n'));
+            process.exit(1);
+        }
+
+        const configuredApis = getApisByIds(config.selectedApis);
+
+        try {
+            const options = await promptIncidentsConfiguration(configuredApis);
+            displayIncidentsConfigSummary(options);
+
+            console.log(chalk.cyan('🔍 Récupération des incidents...\n'));
+
+            const incidentsMap = await fetchAllIncidents(options.apis);
+
+            let totalIncidents = 0;
+
+            for (const api of options.apis) {
+                const incidents = incidentsMap.get(api.id) || [];
+
+                const filteredIncidents = filterAndSortIncidents(incidents, {
+                    filterType: options.filterType,
+                    days: options.days,
+                });
+
+                if (filteredIncidents.length > 0) {
+                    displayIncidents(api, filteredIncidents);
+                    totalIncidents += filteredIncidents.length;
+                } else {
+                    console.log(chalk.green(`✅ ${api.name}: Aucun incident`));
+                }
+            }
+
+            console.log(chalk.gray('\n─'.repeat(50)));
+            console.log(chalk.bold(`Total: ${totalIncidents} incident(s) trouvé(s)`));
+            console.log(chalk.gray('─'.repeat(50) + '\n'));
+
+        } catch (error) {
+            if (error instanceof Error) {
+                console.error(chalk.red('\n❌ Erreur:'), error.message);
+            } else {
+                console.error(chalk.red('\n❌ Une erreur inattendue s\'est produite'));
+            }
+            process.exit(1);
         }
     });
 
