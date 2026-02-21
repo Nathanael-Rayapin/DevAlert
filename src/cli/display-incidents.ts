@@ -1,4 +1,13 @@
-import { formatRelativeTime, getIncidentImpactIcon, getIncidentStatusIcon, IApiConfig, IIncident, INCIDENT_IMPACT, INCIDENT_STATUS, truncate } from "../index";
+import {
+    formatRelativeTime,
+    getIncidentImpactIcon,
+    getIncidentStatusIcon,
+    IApiConfig,
+    IIncident,
+    INCIDENT_IMPACT,
+    INCIDENT_STATUS,
+    truncate
+} from "../index";
 import chalk from 'chalk';
 import Table from 'cli-table3';
 
@@ -39,22 +48,22 @@ function formatIncidentForTable(incident: IIncident): string[] {
     const impactIcon = getIncidentImpactIcon(incident.impact);
     const relativeTime = formatRelativeTime(incident.created_at);
 
-    // Ligne 1 : Titre + Status
+    // Title + Status
     const title = `${statusIcon} ${chalk.bold(incident.name)}`;
     const status = `${chalk.gray('Status:')} ${chalk.white(translateStatus(incident.status))}`;
 
-    // Ligne 2 : Impact + Début
+    // Impact + Start
     const impact = `${chalk.gray('Impact:')} ${impactIcon} ${chalk.white(translateImpact(incident.impact))}`;
     const started = `${chalk.gray('Debut:')} ${chalk.white(relativeTime)}`;
 
-    // Ligne 3 : Résolution (si applicable)
+    //  Resolution (if applicable)
     let resolved = '';
     if (incident.resolved_at) {
         const resolvedTime = formatRelativeTime(incident.resolved_at);
         resolved = `${chalk.gray('Resolu:')} ${chalk.green(resolvedTime)}`;
     }
 
-    // Ligne 4 : Dernière mise à jour
+    // Last update
     let lastUpdate = '';
     if (incident.incident_updates && incident.incident_updates.length > 0) {
         const update = incident.incident_updates[0];
@@ -62,12 +71,11 @@ function formatIncidentForTable(incident: IIncident): string[] {
         lastUpdate = `${chalk.gray('Update:')} ${chalk.white(updatePreview)}`;
     }
 
-    // Ligne 5 : Lien
+    // Link
     const link = incident.shortlink
         ? `${chalk.gray('Lien:')} ${chalk.cyan(incident.shortlink)}`
         : '';
 
-    // Construction du contenu
     const lines = [title, status, impact, started];
     if (resolved) lines.push(resolved);
     if (lastUpdate) lines.push(lastUpdate);
@@ -77,13 +85,12 @@ function formatIncidentForTable(incident: IIncident): string[] {
 }
 
 /**
- * Affiche tous les incidents d'une API avec cli-table3
+ * Displays all incidents for an API with cli-table3
  * 
- * @param api - Configuration de l'API
- * @param incidents - Liste des incidents à afficher
+ * @param api - API configuration
+ * @param incidents - List of incidents to display
  */
 export function displayIncidents(api: IApiConfig, incidents: IIncident[]): void {
-    // Créer le tableau avec style
     const table = new Table({
         head: [chalk.bold.cyan(`${api.name} - ${incidents.length} incident(s)`)],
         colWidths: [100],
@@ -94,13 +101,11 @@ export function displayIncidents(api: IApiConfig, incidents: IIncident[]): void 
         wordWrap: true,
     });
 
-    // Ajouter chaque incident comme une ligne
     incidents.forEach((incident) => {
         const formattedIncident = formatIncidentForTable(incident);
         table.push(formattedIncident);
     });
 
-    // Afficher le tableau
     console.log(table.toString());
     console.log('');
 }
