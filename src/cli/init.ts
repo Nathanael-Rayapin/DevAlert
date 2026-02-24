@@ -96,8 +96,14 @@ export async function initCommand(): Promise<void> {
         console.log(chalk.gray('     $ api-monitor start\n'));
         console.log(chalk.white('  2. Vérifier le statut:'));
         console.log(chalk.gray('     $ api-monitor status\n'));
-        console.log(chalk.white('  3. Reconfigurer:'));
+        console.log(chalk.white('  3. Vérifier les incidents:'));
+        console.log(chalk.gray('     $ api-monitor incidents\n'));
+        console.log(chalk.white('  4. Lister les APIs disponibles:'));
+        console.log(chalk.gray('     $ api-monitor list\n'));
+        console.log(chalk.white('  5. Reconfigurer:'));
         console.log(chalk.gray('     $ api-monitor init\n'));
+        console.log(chalk.white('  6. Supprimer la configuration:'));
+        console.log(chalk.gray('     $ api-monitor reset\n'));
 
         // Note: Automatic startup will be managed in commands.ts
         console.log(chalk.yellow('💡 Utilisez'), chalk.cyan('api-monitor start'), chalk.yellow('pour démarrer le monitoring\n'));

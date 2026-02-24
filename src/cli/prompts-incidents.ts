@@ -113,7 +113,7 @@ export async function promptIncidentsConfiguration(
  * @param options - Selected options.
  */
 export function displayIncidentsConfigSummary(options: IIncidentsDisplayOptions): void {
-    console.log(chalk.gray('\n─'.repeat(50)));
+    console.log(chalk.gray('\n─'.repeat(10)));
     console.log(chalk.bold('Configuration:'));
     console.log(chalk.cyan('APIs:'), chalk.white(
         options.apis.length === 1

@@ -13,7 +13,7 @@ export const API_VERSION = version;
 export { fetchApiStatus } from './cron/fetch-status';
 export { fetchIncidents, fetchAllIncidents, countActiveIncidents, getMostCriticalIncident } from './cron/fetch-incidents';
 export { startHealthcheckScheduler, stopHealthcheckScheduler, runImmediateHealthcheck, } from './cron/scheduler';
-export { displayIncidents, displayNoIncidents } from './cli/display-incidents';
+export { displayIncidents, displayIncidentsForScheduler, displayNoIncidents } from './cli/display-incidents';
 
 // Datas
 export { APIS_TO_MONITOR } from './data/apis-to-monitor.constant';

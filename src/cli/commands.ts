@@ -217,9 +217,7 @@ program
                 }
             }
 
-            console.log(chalk.gray('\n─'.repeat(50)));
             console.log(chalk.bold(`Total: ${totalIncidents} incident(s) trouvé(s)`));
-            console.log(chalk.gray('─'.repeat(50) + '\n'));
 
         } catch (error) {
             if (error instanceof Error) {
