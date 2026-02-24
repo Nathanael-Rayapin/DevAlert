@@ -1,7 +1,10 @@
 import {
+    countActiveIncidents,
+    fetchIncidents,
     formatRelativeTime,
     getIncidentImpactIcon,
     getIncidentStatusIcon,
+    getMostCriticalIncident,
     IApiConfig,
     IIncident,
     INCIDENT_IMPACT,
@@ -108,6 +111,37 @@ export function displayIncidents(api: IApiConfig, incidents: IIncident[]): void 
 
     console.log(table.toString());
     console.log('');
+}
+
+export async function displayIncidentsForScheduler(api: IApiConfig): Promise<void> {
+    try {
+        const incidents = await fetchIncidents(api);
+
+        if (!incidents || incidents.length === 0) {
+            return;
+        }
+
+        const activeCount = countActiveIncidents(incidents);
+
+        if (activeCount === 0) {
+            return;
+        }
+
+        const criticalIncident = getMostCriticalIncident(incidents);
+
+        if (criticalIncident) {
+            const incidentIcon = getIncidentImpactIcon(criticalIncident.impact);
+            console.log(
+                chalk.gray('  └─'),
+                incidentIcon,
+                chalk.yellow(`${activeCount} incident(s):`),
+                chalk.white(criticalIncident.name)
+            );
+        }
+    } catch (error) {
+        // Silent: if incident fetch fails, nothing is displayed.
+        // The main health check must not be impacted.
+    }
 }
 
 export function displayNoIncidents(api: IApiConfig): void {

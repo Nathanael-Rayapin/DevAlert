@@ -1,5 +1,13 @@
 import { Cron } from 'croner';
-import { fetchApiStatus, isApiStatus, isHttpError, getGravityIcon, getHttpErrorIcon, ISchedulerOptions } from '../index';
+import {
+    fetchApiStatus,
+    isApiStatus,
+    isHttpError,
+    getStatusGravityIcon,
+    getStatusHttpErrorIcon,
+    ISchedulerOptions,
+    displayIncidentsForScheduler
+} from '../index';
 import { type IApiConfig } from '../index';
 
 /**
@@ -18,7 +26,7 @@ async function checkAllApis(apis: IApiConfig[]): Promise<void> {
 
     const results = await Promise.allSettled(promises);
 
-    results.forEach((result, index) => {
+    results.forEach(async (result, index) => {
         const api = apis[index];
         if (!api) return;
 
@@ -27,16 +35,20 @@ async function checkAllApis(apis: IApiConfig[]): Promise<void> {
 
             // Case 1: API returns a normal status (none, minor, major, critical, maintenance)
             if (isApiStatus(check.status)) {
-                const icon = getGravityIcon(check.status.gravity);
+                const icon = getStatusGravityIcon(check.status.gravity);
                 console.log(
                     `${icon} ${api.name}: ${check.status.summary} ` +
                     `(${check.responseTime}ms) [${check.status.gravity}]`
                 );
             }
 
+            displayIncidentsForScheduler(api).catch(() => {
+                // Ignore errors silently
+            });
+
             // Case 2: HTTP error (4xx, 5xx)
             if (isHttpError(check.status)) {
-                const icon = getHttpErrorIcon(check.status.gravity);
+                const icon = getStatusHttpErrorIcon(check.status.gravity);
                 console.log(
                     `${icon} ${api.name}: ${check.status.summary} ` +
                     `[HTTP ${check.statusCode}] (${check.responseTime}ms) ` +
@@ -44,7 +56,6 @@ async function checkAllApis(apis: IApiConfig[]): Promise<void> {
                 );
             }
         } else {
-            // Case 3: Promise rejected (timeout, network error, etc.)
             console.error(`❌ ${api.name}: ÉCHEC - ${result.status}`);
         }
     });
